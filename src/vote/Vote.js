@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 //import './App.css';
+//import { PageHeader } from 'react-bootstrap';
 
 
 class Vote extends Component {
@@ -12,11 +13,13 @@ class Vote extends Component {
       
       render() {
         return (
+          <div className='rowC'>
           <form onSubmit={this.handleSignIn.bind(this)}>
-            <h3>Vote on Bills</h3>
+              <h2>Teesa on Bills</h2>
             <input type="password" ref="password" placeholder="enter NIN" /><br/><br/>
             <input type="submit" value="Vote Now" />
           </form>
+          </div>
         )
       }
     

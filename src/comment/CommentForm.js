@@ -17,14 +17,9 @@ class CommentForm extends Component{
       return(
         <form className="comment-form form-group" onSubmit={this.handleSubmit}>
           <div className="input-group">
-            <span className="input-group-addon">Name</span>
-            <input type="text" placeholder="Your name" className="form-control" />
-          </div>
-          <div className="input-group">
-            <span className="input-group-addon">Comment</span>
+          <h6>0 comments</h6>
             <input type="text" placeholder="Say something..." className="form-control" />
           </div>
-          <input type="submit" value="Post" className="btn btn-primary" />
         </form>
       );
     }

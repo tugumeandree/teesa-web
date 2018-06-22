@@ -23,7 +23,7 @@ class CommentBox extends Component{
     render(){
         return(
 
-        <div className="comment-box">
+        <div className="rowC">
           <CommentForm />
          
         </div>
