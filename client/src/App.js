@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
-
-//import logo from './logo.svg';
 import './App.css';
-//import Comment from './comment/Comment';
-//import Vote from './vote/Vote';
+import { Route, Link } from 'react-router-dom';
+import CommentBox from './comment/Comment';
 import Player from './livestream/Player';
-import CommentBox from './comment/CommentBox';
+
 //import SignInScreen from './login/signInScreen';
 
-//import Latest from './latest/Latest';
 import Counter from './counter/Counter';
 import {Button, Grid, Row, Col,PageHeader } from 'react-bootstrap';
+import Popup from './vote';
 
 //import Livestream from '../comment/Livestream';
 
@@ -51,8 +49,20 @@ import {Button, Grid, Row, Col,PageHeader } from 'react-bootstrap';
   
   
       */
-    
+ 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      showPopup: false
+    };
+  }
+
+  togglePopup() {
+    this.setState({
+      showPopup: !this.state.showPopup
+    });
+  }
 
   state = {
     response: ''
@@ -107,8 +117,21 @@ class App extends Component {
     </Col>
   </Row>
   </Grid>
+
   
   
+  <div className='app'>
+          <h1>Vote</h1>
+          <button onClick={this.togglePopup.bind(this)}>YES</button>
+          <button onClick={this.togglePopup.bind(this)}>NO</button>
+          {this.state.showPopup ? 
+            <Popup
+              text='ENTER NIN'
+              closePopup={this.togglePopup.bind(this)}
+            />
+            : null
+          }
+        </div>
       
       </div>
       
